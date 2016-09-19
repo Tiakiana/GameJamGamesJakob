@@ -12,11 +12,13 @@ public class GameController : MonoBehaviour {
     public float Timer = 300f;
     public Text TimerTxt;
     float spawntime;
+    public Texture2D cursor;
     void Awake() {
 
         GameCtrlInst = this;
         Physics2D.IgnoreLayerCollision(8,8,true);
     }
+    
 
     public void GoToMaidenWin() {
         EditorSceneManager.LoadScene(1);
@@ -38,6 +40,7 @@ public class GameController : MonoBehaviour {
     }
     void Start() {
         spawntime = SpawnTime;
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
 
     }
     void Update() {
